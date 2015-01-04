@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 
 public class WasRun extends TestCase{
 	public boolean wasRun = false;
@@ -28,6 +30,7 @@ public class WasRun extends TestCase{
 	public void testBrokenMethod(){
 		throw new RuntimeException("this is broken method");
 	}
+	
 	
 
 }

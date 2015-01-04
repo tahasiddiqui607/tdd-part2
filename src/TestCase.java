@@ -8,8 +8,7 @@ public abstract class TestCase {
 	}
 	
 	public abstract void setUp();
-	public TestResult run(){
-		TestResult testResult = new TestResult();
+	public TestResult run( TestResult testResult ){
 		try {
 			testResult.testStarted();
 			setUp();
@@ -20,7 +19,7 @@ public abstract class TestCase {
 			
 		} catch (Exception e) {
 			testResult.testFailed();
-			e.printStackTrace();
+			//e.printStackTrace();
 		} finally{
 			tearDown(); 
 		}

@@ -1,18 +1,31 @@
+import org.junit.Assert;
+
 
 public class TestCaseTest  extends TestCase{
 	
 	public TestCaseTest(String methodName){
 		super(methodName);
-	}
-	
-	private static void testWasMethodRun(){
-		WasRun wasRun = new WasRun("testMethod");
-		System.out.println("testWasMethodRun --> Result: " + wasRun.wasRun);
-		wasRun.run();
-		System.out.println("testWasMethodRun --> Result: " + wasRun.wasRun);
 		
 	}
+	
+	
+	public static void testSetUp(){
+		WasRun wasRunObj = new WasRun("testMethod");
+		wasRunObj.run();
+		
+		System.out.println("testSetUp --> Result: " + wasRunObj.wasSetUp);
+	}
+	
+	public static void testRunning(){
+		WasRun wasRunObj = new WasRun("testMethod");
+		wasRunObj.run();
+		System.out.println("testRunning --> Result: " + wasRunObj.wasRun);
+	}
+	
+	
+
 	public static void main(String[] args){
-		testWasMethodRun();
+		new TestCaseTest("testRunning").run();
+		new TestCaseTest("testSetUp").run();
 	}
 }

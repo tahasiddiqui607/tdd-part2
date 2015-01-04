@@ -1,6 +1,7 @@
 
 public class WasRun extends TestCase{
-	boolean wasRun = false;
+	public boolean wasRun = false;
+	public boolean wasSetUp;
 	
 	
 	public WasRun(String methodName){
@@ -10,6 +11,11 @@ public class WasRun extends TestCase{
 	
 	public void testMethod(){
 		wasRun = true;
+	}
+	
+	public void setUp(){
+		wasRun = false;
+		wasSetUp = true;
 	}
 	
 	

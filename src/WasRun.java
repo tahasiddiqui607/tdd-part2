@@ -25,6 +25,9 @@ public class WasRun extends TestCase{
 		log.append(" tearDown");
 	}
 	
+	public void testBrokenMethod(){
+		throw new RuntimeException("this is broken method");
+	}
 	
 
 }

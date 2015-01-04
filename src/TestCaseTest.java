@@ -16,9 +16,19 @@ public class TestCaseTest {
 		assertEquals("setUp testMethod tearDown", wasRunObj.log.toString());
 		
 	}
+	@Test
+	public  void testResult(){
+		WasRun wasRunObj= new WasRun("testMethod");
+		TestResult result= wasRunObj.run();
+		assertEquals("1 run, 0 failed",  result.summary());
+	}
 	
-	
-	
+	@Test
+	public  void testBrokenMethodResult(){
+		WasRun wasRunObj= new WasRun("testBrokenMethod");
+		TestResult result= wasRunObj.run();
+		assertEquals("1 run, 1 failed",  result.summary());
+	}
 
 	/*public static void main(String[] args){
 		new TestCaseTest("testRunning").run();

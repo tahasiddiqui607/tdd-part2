@@ -8,19 +8,20 @@ public abstract class TestCase {
 	}
 	
 	public abstract void setUp();
-	public void run(){
-		
+	public TestResult run(){
+		TestResult testResult = new TestResult();
 		try {
+			testResult.testStarted();
 			setUp();
 			Class cls = this.getClass();
 			Method method = cls.getDeclaredMethod(methodName, null);
 			method.invoke(this);
-			tearDown();
+			tearDown(); 
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		return testResult;
 	}
 	
 	public abstract void tearDown();

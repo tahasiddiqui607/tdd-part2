@@ -9,4 +9,7 @@ public class TestResult {
 	public void testStarted(){
 		runCounter++;
 	}
+	public void testFailed(){
+		failedCounter++;
+	}
 }

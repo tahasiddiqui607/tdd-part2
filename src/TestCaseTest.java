@@ -1,31 +1,27 @@
-import org.junit.Assert;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 
-public class TestCaseTest  extends TestCase{
+public class TestCaseTest {
 	
-	public TestCaseTest(String methodName){
+	/*public TestCaseTest(String methodName){
 		super(methodName);
 		
-	}
+	}*/
 	
-	
-	public static void testSetUp(){
+	@Test
+	public  void testTemplateMethod(){
 		WasRun wasRunObj = new WasRun("testMethod");
 		wasRunObj.run();
+		assertEquals("setUp testMethod tearDown", wasRunObj.log.toString());
 		
-		System.out.println("testSetUp --> Result: " + wasRunObj.wasSetUp);
 	}
 	
-	public static void testRunning(){
-		WasRun wasRunObj = new WasRun("testMethod");
-		wasRunObj.run();
-		System.out.println("testRunning --> Result: " + wasRunObj.wasRun);
-	}
 	
 	
 
-	public static void main(String[] args){
+	/*public static void main(String[] args){
 		new TestCaseTest("testRunning").run();
 		new TestCaseTest("testSetUp").run();
-	}
+	}*/
 }

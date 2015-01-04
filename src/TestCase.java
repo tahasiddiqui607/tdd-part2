@@ -7,9 +7,7 @@ public abstract class TestCase {
 		this.methodName = methodName;
 	}
 	
-	public void setUp(){
-		
-	}
+	public abstract void setUp();
 	public void run(){
 		
 		try {
@@ -17,10 +15,13 @@ public abstract class TestCase {
 			Class cls = this.getClass();
 			Method method = cls.getDeclaredMethod(methodName, null);
 			method.invoke(this);
+			tearDown();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
+	
+	public abstract void tearDown();
 }
